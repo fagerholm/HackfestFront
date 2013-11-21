@@ -1,0 +1,18 @@
+<p>Filter: <input type="text" ng-model="customerfilter"/></p>
+
+<p>Valgt persons telefonnummer: <b>{{selected.phone}}</b></p>  
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <!--<th>City</th>-->
+    </tr>
+    <tr ng-repeat="onecustomer in allcustomers | filter:customerfilter"
+        ng-click="showSelectedElement(onecustomer)"
+        ng-class-even = "'even'"
+        ng-class-odd = "'odd'"
+        >
+        <td>{{onecustomer.name}}</td>
+        <!--<td>{{onecustomer.city}}</td>-->
+    </tr>
+</table>
